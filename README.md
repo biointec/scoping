@@ -1,4 +1,4 @@
-# Parental_Selection_for_long_term_profits
+# Preservation of genetic variation in a breeding population for long-term genetic gain
 ## Running the code
 - Install the package hypred (zip file included)
 - Install the package GSSimTPUpdate (zip file included)
