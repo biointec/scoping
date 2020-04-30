@@ -420,9 +420,6 @@ for (change in tp.change) {
         
         # Make selections on the GEBVs
         # Select the top 100 based on GEBVs for parents of the next cycle
-      #  source("select_population_SA.R")
-      #  parent.selections.i<-select.populationSA(value.mat=predictions.out$GEBV,scoping) 
-       
        
         parent.selections.i <- select.population(value.mat = predictions.out$GEBV, 
                                                 sel.intensity = parents.sel.intensity, 
