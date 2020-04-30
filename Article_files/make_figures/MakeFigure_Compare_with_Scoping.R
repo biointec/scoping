@@ -153,61 +153,63 @@ title<-'Genetic Value for fixed scoping factors'
   
 
 fig1<-ggplot(data=result.cycle.top, aes(x=cycle, y=mean_Genetic_Value,colour=type,linetype=type)) +
-  geom_line(size=1.2)  +
-  scale_linetype_manual(values=c("twodash", "twodash","twodash","twodash","twodash","solid", "solid","solid","solid", "solid"))+
-  scale_color_manual(values=c("gray80","gray40","gray60","gray30","black","gray80","gray40","gray60", "gray30","black"))+ 
+  geom_line(size=1)  +
+  scale_linetype_manual(values=c(1,2,3,4,5,6,7,8))+
+  scale_color_manual(values=c("#000000","#0009bd","#00aeff","#ffd20a","#000000","#0009bd","#00aeff","#ffd20a"))+ 
+  #scale_shape_manual(values=c(5,0,1,2,19,5,0,1,2,19))+
   ylab('Genetic Value \n(GV)') +
   xlab('Breeding Cycle')+
   theme_bw()+
   scale_y_continuous(breaks = seq(0, 1, 0.2),expand=c(0,0),limits=c(0,1),sec.axis = dup_axis(name = NULL, labels = NULL))+
   scale_x_continuous(breaks = seq(0, 50, 10),expand=c(0,0),limits=c(1,50),sec.axis = dup_axis(name = NULL, labels = NULL))+
-  theme(legend.title =  element_blank(),text = element_text(size=30) , legend.position = c(0.55,0.23),legend.direction = "vertical", panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
-  theme(legend.text = element_text(size=25), axis.text = element_text(colour="black"))+
-  theme(axis.line = element_line(size=0.5),axis.ticks.length = unit(-0.25,"cm"))+
-  theme(legend.key.width = unit(1,"cm"),legend.key.height = unit(0.8,"cm"))+
-  theme(axis.text.x =element_text(margin=unit(c(t = 0.7, r = 0, b = 0, l = 0), "cm")))+
-  theme(axis.text.y =element_text(margin=unit(c(t = 0, r = 0.7, b = 0, l = 0), "cm")))+
-  theme(plot.margin=unit(c(0.7,0.7,0.7,0.7),"cm"))+
-  guides(linetype=guide_legend(ncol=2))+
-  theme(axis.title.x=element_blank(),axis.text.x=element_blank(),legend.background = element_rect(fill=NA))
+  theme(legend.title =  element_blank(),text = element_text(size=9) , legend.position =  c(0.55,0.27),legend.direction = "vertical", panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
+  theme(legend.text = element_text(size=9), axis.text = element_text(colour="black"))+
+  theme(axis.line = element_line(size=0.5),axis.ticks.length = unit(-0.15,"cm"))+
+  theme(legend.key.width = unit(0.5,"cm"),legend.key.height = unit(0.1,"cm"), legend.key = element_rect(fill = NA))+
+  theme(axis.text.x =element_text(margin=unit(c(t = 0.2, r = 0, b = 0, l = 0), "cm")))+
+  theme(axis.text.y =element_text(margin=unit(c(t = 0, r = 0.2, b = 0, l = 0), "cm")))+
+  theme(plot.margin=unit(c(0.7,0.7,0.7,0.),"cm"))+
+  guides(linetype=guide_legend(ncol=1))+
+  theme(legend.background = element_rect(fill=NA))
 
 fig2<-ggplot(data=result.variance, aes(x=cycle, y=mean_Genetic_Value,colour=type,linetype=type)) +
-  geom_line(size=1.2)  +
-  scale_linetype_manual(values=c("solid","solid","solid", "solid","solid"))+
-  scale_color_manual(values=c("gray80","gray40","gray60", "gray30","black"))+ 
+  geom_line(size=1)  +
+  scale_linetype_manual(values=c(6,7,8,9))+
+  scale_color_manual(values=c("#000000","#0009bd","#00aeff","#ffd20a"))+ 
+  scale_shape_manual(values=c(5,0,1,2,19))+
   ylab('Genetic Variance') +
   xlab('Breeding Cycle')+
   theme_bw()+
   scale_y_continuous(breaks = seq(0, 10, 5),expand=c(0,0),limits=c(0,10),sec.axis = dup_axis(name = NULL, labels = NULL))+
   scale_x_continuous(breaks = seq(0, 50, 10),expand=c(0,0),limits=c(1,50),sec.axis = dup_axis(name = NULL, labels = NULL))+
-  theme(legend.title =  element_blank(),text = element_text(size=30) , legend.position = c(0.55,0.80),legend.direction = "vertical", panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
-  theme(legend.text = element_text(size=25), axis.text = element_text(colour="black"))+
-  theme(axis.line = element_line(size=0.5),axis.ticks.length = unit(-0.25,"cm"))+
-  theme(legend.key.width = unit(1,"cm"),legend.key.height = unit(0.8,"cm"))+
-  theme(axis.text.x =element_text(margin=unit(c(t = 0.7, r = 0, b = 0, l = 0), "cm")))+
-  theme(axis.text.y =element_text(margin=unit(c(t = 0, r = 0.7, b = 0, l = 0), "cm")))+
-  theme(plot.margin=unit(c(0.7,0.7,0.7,0.7),"cm"))+
+  theme(legend.title =  element_blank(),text = element_text(size=9) , legend.position =  c(0.50,0.84),legend.direction = "vertical", panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
+  theme(legend.text = element_text(size=9), axis.text = element_text(colour="black"))+
+  theme(axis.line = element_line(size=0.5),axis.ticks.length = unit(-0.15,"cm"))+
+  theme(legend.key.width = unit(0.5,"cm"),legend.key.height = unit(0.1,"cm"), legend.key = element_rect(fill = NA))+
+  theme(axis.text.x =element_text(margin=unit(c(t = 0.2, r = 0, b = 0, l = 0), "cm")))+
+  theme(axis.text.y =element_text(margin=unit(c(t = 0, r = 0.2, b = 0, l = 0), "cm")))+
+  theme(plot.margin=unit(c(0.7,0.7,0.7,0.),"cm"))+
   guides(linetype=guide_legend(ncol=1))+
-  theme(axis.title.x=element_blank(),axis.text.x=element_blank(),legend.background = element_rect(fill=NA))
+  theme(legend.background = element_rect(fill=NA))
 
 fig3<-ggplot(data=result.acc, aes(x=cycle, y=mean_Genetic_Value,colour=type,linetype=type)) +
-  geom_line(size=1.2)  +
-  scale_linetype_manual(values=c("solid","solid","solid", "solid","solid"))+
-  scale_color_manual(values=c("gray80","gray40","gray60","gray30","black"))+ 
+  geom_line(size=1)  +
+  scale_linetype_manual(values=c(6,7,8,9,10))+
+  scale_color_manual(values=c("#000000","#0009bd","#00aeff","#ffd20a"))+ 
   ylab('Accuracy') +
   xlab('Breeding Cycle')+
   theme_bw()+
   scale_y_continuous(breaks = seq(0, 1, 0.2),expand=c(0,0),limits=c(0,1),sec.axis = dup_axis(name = NULL, labels = NULL))+
   scale_x_continuous(breaks = seq(0, 50, 10),expand=c(0,0),limits=c(1,50),sec.axis = dup_axis(name = NULL, labels = NULL))+
-  theme(legend.title =  element_blank(),text = element_text(size=30) , legend.position = c(0.55,0.80),legend.direction = "vertical", panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
-  theme(legend.text = element_text(size=25), axis.text = element_text(colour="black"))+
-  theme(axis.line = element_line(size=0.5),axis.ticks.length = unit(-0.25,"cm"))+
-  theme(legend.key.width = unit(1,"cm"),legend.key.height = unit(0.8,"cm"))+
-  theme(axis.text.x =element_text(margin=unit(c(t = 0.7, r = 0, b = 0, l = 0), "cm")))+
-  theme(axis.text.y =element_text(margin=unit(c(t = 0, r = 0.7, b = 0, l = 0), "cm")))+
-  theme(plot.margin=unit(c(0.7,0.7,0.7,0.7),"cm"))+
+  theme(legend.title =  element_blank(),text = element_text(size=9) , legend.position =  c(0.50,0.84),legend.direction = "vertical", panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
+  theme(legend.text = element_text(size=9), axis.text = element_text(colour="black"))+
+  theme(axis.line = element_line(size=0.5),axis.ticks.length = unit(-0.15,"cm"))+
+  theme(legend.key.width = unit(0.5,"cm"),legend.key.height = unit(0.1,"cm"), legend.key = element_rect(fill = NA))+
+  theme(axis.text.x =element_text(margin=unit(c(t = 0.2, r = 0, b = 0, l = 0), "cm")))+
+  theme(axis.text.y =element_text(margin=unit(c(t = 0, r = 0.2, b = 0, l = 0), "cm")))+
+  theme(plot.margin=unit(c(0.7,0.7,0.7,0.),"cm"))+
   guides(linetype=guide_legend(ncol=1))+
-  theme(axis.title.x=element_blank(),axis.text.x=element_blank(),legend.background = element_rect(fill=NA))
+  theme(legend.background = element_rect(fill=NA))
 
 filename<-paste0(map,"/Compared_GV.eps")
 ggsave(filename,heigh=14.5,width=20, fig1,device="eps")
