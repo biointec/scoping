@@ -62,7 +62,6 @@ make.crossing.block.scoping <- function(Parents= parent.selections.i,
   
   marker_allele[1,(gen1+gen2)==-2]<-marker_allele[1,(gen1+gen2)==-2]+1
   marker_allele[2,(gen1+gen2)== 2]<-marker_allele[2,(gen1+gen2)==2]+1
-  #nul wordt niet meegeteld want er bestaat slechts een kleine kans dat beide allelen worden ingebouwd
   marker_allele[,abs(gen1+gen2)== 1]<-marker_allele[,abs(gen1+gen2)== 1]+1
   marker_seq[marker_allele[1,]>0 & marker_allele[2,]>0]<- FALSE
   
