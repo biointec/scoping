@@ -45,7 +45,7 @@ make.crossing.block.scoping <- function(Parents= parent.selections.i,
     temp.name<- Parents_available[i]
     temp.geno<- as.matrix(Genotype[temp.name,])
     temp.score<-sum(colVars(rbind(all_parents, t(temp.geno)))[marker_seq])
-    if (temp.score == 0 ){ #Indien de huidige combo geen nieuwe info inbrengen of alle info is al opgenomen, neem dan de beste kandidaten
+    if (temp.score == 0 ){ 
       temp.score<-sum(colVars(rbind(all_parents, t(temp.geno))))
     }
     
